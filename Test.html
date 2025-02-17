@@ -111,7 +111,7 @@
             font-family: 'Satisfy', cursive;
             font-size: 4rem;
             line-height: 1;
-            color: #2e5cda;
+            color: #566dad;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
         }
         .great-vibes-regular {
@@ -232,10 +232,11 @@
          <p>I Love U So Much</p>
          <p>Xixixixixixi</p>
         </h1>
-        <video id="popperVideo" class="hidden" width="729" height="480" autoplay>
+        <div><video id="popperVideo" class="hidden" width="729" height="480" autoplay>
             <source src="Happy Birthday Sayangku! Wish You Always Be The Best!.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
+        </div>
         <button id="backButton" class="hidden" onclick="goToPage3()">Back</button>
     </div>
 
@@ -289,7 +290,7 @@
 
         function typeWriter() {
             let i = 0;
-            const speed = 10; // milliseconds per character
+            const speed = 5; // milliseconds per character
             const typewriterElement = document.getElementById('typewriter');
             function type() {
                 if (i < message.length) {
@@ -307,7 +308,7 @@
             document.getElementById('page2').classList.add('hidden');
             document.getElementById('page3').classList.remove('hidden');
             // Kurangi volume background music menjadi 30%
-            document.getElementById('backgroundMusic').volume = 0.3;
+            document.getElementById('backgroundMusic').volume = 0.6;
 
             const video = document.getElementById('video');
             video.play();
