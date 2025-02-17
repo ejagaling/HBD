@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ucapan Ulang Tahun</title>
+    <!-- Menambahkan Google Font "Satisfy" dan "Great Vibes" -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Satisfy&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: linear-gradient(135deg, #e0f7fa, #80deea);
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            color: #01579b;
+        }
+        .page {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+        h1 {
+            font-size: 2rem;
+            animation: bounce 1.5s infinite;
+            color: #01579b;
+        }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        .hidden {
+            display: none;
+        }
+        .modal {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            text-align: center;
+        }
+        .modal input {
+            padding: 10px;
+            margin: 10px 0;
+            border: 2px solid #80deea;
+            border-radius: 5px;
+            width: 80%;
+            font-size: 16px;
+        }
+        .modal button {
+            padding: 10px 20px;
+            background-color: #01579b;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 5px;
+        }
+        .modal button:hover {
+            background-color: #0288d1;
+        }
+        .typewriter {
+            background-color: white;
+            padding: 20px;
+            border: 2px solid #80deea;
+            border-radius: 10px;
+            width: 70%;
+            max-height: 60vh; /* Batasi tinggi maksimal */
+            overflow-y: auto; /* Tambahkan scroll jika teks terlalu panjang */
+            text-align: left;
+            white-space: pre-wrap;
+            font-size: 1.2rem;
+            line-height: 1.6;
+            color: #01579b;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 70% }
+        }
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: #01579b; }
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #01579b;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #0288d1;
+        }
+        .satisfy-font {
+            font-family: 'Satisfy', cursive;
+            font-size: 4rem;
+            line-height: 1;
+            color: #2e5cda;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        .great-vibes-regular {
+            font-family: "Great Vibes", serif;
+            font-size: 4rem;
+            line-height: 1.2;
+            color: #2e5cda;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        .great-vibes-regular2 {
+            font-family: "Great Vibes", serif;
+            font-size: 2rem;
+            line-height: 1;
+            color: #2e5cda;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        video {
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        /* Animasi Slide-In untuk Page 4 */
+        .slide-in {
+            animation: slideIn 1s ease-out;
+        }
+        @keyframes slideIn {
+            from {
+                transform: translateY(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        /* Animasi Fade-Out */
+        .fade-out {
+            animation: fadeOut 1s ease-out forwards;
+        }
+        @keyframes fadeOut {
+            from {
+                opacity: 1;
+            }
+            to {
+                opacity: 0;
+            }
+        }
+        /* Animasi Fade-In */
+        .fade-in {
+            animation: fadeIn 1s ease-out forwards;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <audio id="backgroundMusic" >
+        <source src="Lookindesky.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- Modal Pertama Kali Buka -->
+    <div id="musicModal" class="modal">
+        <p>Mau sambil denger lagu nya atau ngga?</p>
+        <button onclick="playMusic(true)">Mau</button>
+        <button onclick="playMusic(false)">Ngga</button>
+    </div>
+
+    <!-- Page 1 -->
+    <div id="page1" class="page hidden">
+        <h1 class="great-vibes-regular">Surat Tertutup Untuk Manusia
+            <p>Paling Menggemaskan</p>
+        </h1>
+        <h2 class="great-vibes-regular2"> 
+            (Soalnya kalo terbuka nanti ga rahasia xixixi)
+        </h2>
+        <button onclick="showPasswordModal()">Klik ini buat bacanya yaa</button>
+    </div>
+
+    <!-- Password Modal -->
+    <div id="passwordModal" class="modal hidden">
+        <input type="password" id="passwordInput" placeholder="Masukkan Password">
+        <button onclick="checkPassword()">Submit</button>
+    </div>
+
+    <!-- Wrong Password Modal -->
+    <div id="wrongPasswordModal" class="modal hidden">
+        <img src="wlee.png" alt="Warning" width="50">
+        <p>Salah wleee</p>
+        <button onclick="closeWrongPasswordModal()">Coba lagi dong</button>
+    </div>
+
+    <!-- Page 2 -->
+    <div id="page2" class="page hidden">
+        <div id="typewriter" class="typewriter"></div>
+        <button id="nextButton" class="hidden" onclick="goToPage3()">Masi Ada Lanjutan Nya Nih</button>
+    </div>
+
+    <!-- Page 3 -->
+    <div id="page3" class="page hidden">
+        <video id="video" width="640" height="360" controls>
+            <source src="vlog1.MP4" type="video/mp4">
+        </video>
+        <div>
+            <button onclick="goToPage2()">Back</button>
+            <button onclick="goToPage4()">Next</button>
+        </div>
+    </div>
+
+    <!-- Page 4 -->
+    <div id="page4" class="page hidden">
+        <h1 id="birthdayText" class="satisfy-font slide-in">
+            Ikan Hiu Makan Tomat
+         <p>I Love U So Much</p>
+         <p>Xixixixixixi</p>
+        </h1>
+        <video id="popperVideo" class="hidden" width="729" height="480" autoplay>
+            <source src="Happy Birthday Sayangku! Wish You Always Be The Best!.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <button id="backButton" class="hidden" onclick="goToPage3()">Back</button>
+    </div>
+
+    <script>
+        const password = "24022004";
+        const message = `Halo Aisyah Febriani Tusari!\n\nYeeeyyy pinter bisa buka password nya!! Eja mau ngucapin selamat ulang tahun buat orang yang paling eja banggain, yang paling eja kagumin, support system nya ejaa, orang yang paling cantikkk dan tergemashh sejagat rayaa wkwkw. Selamat atas semua pencapaian dan prestasi yang udah isa raih. Selamat udah mau terus berjuang buat hidup sampe hari ini dan seterusnya. Selamat buat semua usaha isa yang udah isa lakuin selama ini.\n\nSemogaa, di umur isa yang ke 21 ini harapan harapan isa mulai terkabul satu per satu. Semoga isa bisa terus ceriaa, bisa terus semangattt buat hidupp, bisa terus bareng bareng sama ejaa xixixii.\n\nSemoga makin bertambah nya umur isa juga bikin isa makin sayang sama diri sendirii, sama keluarga jugaa, sama eja jugaa ehehee. Jaga terus kesehatan nya yaa, jajan nya tuuuh jangan bandell hiiii cubit geraa.\n\nPokonya semoga apa yang isa mau bisa tercapai satu per satuu. Kalo isa ngerasa down, cape, sedihh bilang aja ke eja okeeyy, eja siapp 24/7 buat support isa apapun kondisi nya mau ada badaii mau ada banjirr kaya di baleendah juga inti nya eja siapp ada buat isaa xixixii.\n\nMaaf yaa kalo kata kata eja berantakan ga bagus sama ga jelas, eja ga pinter ngucapin yang kaya gini, ga pinter bikin kata kata juga soalnya whehehe`;
+
+        // Fungsi untuk menangani pilihan musik
+        function playMusic(play) {
+            const musicModal = document.getElementById('musicModal');
+            const page1 = document.getElementById('page1');
+            const audio = document.getElementById('backgroundMusic');
+
+            musicModal.classList.add('hidden');
+            page1.classList.remove('hidden');
+
+            if (play) {
+                audio.play().then(() => {
+                    console.log('Audio is playing');
+                }).catch(error => {
+                    console.error('Error playing audio:', error);
+                });
+            }
+        }
+
+        function showPasswordModal() {
+            document.getElementById('passwordModal').classList.remove('hidden');
+        }
+
+        function checkPassword() {
+            const input = document.getElementById('passwordInput').value;
+            if (input === password) {
+                document.getElementById('passwordModal').classList.add('hidden');
+                goToPage2();
+            } else {
+                document.getElementById('wrongPasswordModal').classList.remove('hidden');
+            }
+        }
+
+        function closeWrongPasswordModal() {
+            document.getElementById('wrongPasswordModal').classList.add('hidden');
+        }
+
+        function goToPage2() {
+            document.getElementById('page1').classList.add('hidden');
+            document.getElementById('page2').classList.remove('hidden');
+            typeWriter();
+            // Kembalikan volume ke 100%
+            document.getElementById('backgroundMusic').volume = 1.0;
+        }
+
+        function typeWriter() {
+            let i = 0;
+            const speed = 10; // milliseconds per character
+            const typewriterElement = document.getElementById('typewriter');
+            function type() {
+                if (i < message.length) {
+                    typewriterElement.innerHTML += message.charAt(i);
+                    i++;
+                    setTimeout(type, speed);
+                } else {
+                    document.getElementById('nextButton').classList.remove('hidden');
+                }
+            }
+            type();
+        }
+
+        function goToPage3() {
+            document.getElementById('page2').classList.add('hidden');
+            document.getElementById('page3').classList.remove('hidden');
+            // Kurangi volume background music menjadi 30%
+            document.getElementById('backgroundMusic').volume = 0.3;
+            document.getElementById('video').play();
+        }
+
+        function goToPage4() {
+            document.getElementById('page3').classList.add('hidden');
+            document.getElementById('page4').classList.remove('hidden');
+            const birthdayText = document.getElementById('birthdayText');
+            const popperVideo = document.getElementById('popperVideo');
+
+            // Tampilkan teks "Happy Birthday Sayangku!"
+            birthdayText.classList.remove('hidden');
+
+            // Setelah 5 detik, sembunyikan teks dan tampilkan video
+            setTimeout(() => {
+                birthdayText.classList.add('fade-out');
+                setTimeout(() => {
+                    birthdayText.classList.add('hidden');
+                    popperVideo.classList.remove('hidden');
+                    popperVideo.classList.add('fade-in');
+                    popperVideo.play();
+                }, 1000); // Durasi fade-out
+            }, 4000); // Tunda 5 detik sebelum memulai efek
+
+            // Tampilkan tombol "Back" setelah 20 detik
+            setTimeout(() => {
+                document.getElementById('backButton').classList.remove('hidden');
+            }, 20000);
+
+            // Kembalikan volume ke 100%
+            document.getElementById('backgroundMusic').volume = 1.0;
+        }
+
+        function goToPage2FromPage3() {
+            document.getElementById('page3').classList.add('hidden');
+            document.getElementById('page2').classList.remove('hidden');
+            // Kembalikan volume ke 100%
+            document.getElementById('backgroundMusic').volume = 1.0;
+        }
+    </script>
+</body>
+</html>
